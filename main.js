@@ -21,3 +21,13 @@ function updateTotalPrice() {
 productSelector.addEventListener('change', updateTotalPrice); // when product changes
 quantityInput.addEventListener('input', updateTotalPrice); // when quantity changes
 
+// Task 4: Handle Order Submission
+// When the user clicks on the "Place Order" button, display the order summary
+
+placeOrderButton.addEventListener('click', function() {
+    let selectedProduct = productSelector.options[productSelector.selectedIndex].text; // get the selected product name
+    let quantity = quantityInput.value; // get the quantity input value
+    let totalPrice = totalPriceElement.textContent; // get the total price
+    
+    orderSummary.textContent = `You ordered ${quantity} of ${selectedProduct}. Total price: $${totalPrice}`; // display the order summary
+});
